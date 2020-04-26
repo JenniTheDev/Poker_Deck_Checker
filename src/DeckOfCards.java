@@ -6,6 +6,7 @@ public class DeckOfCards {
    // random number generator
    private static final SecureRandom randomNumbers = new SecureRandom();
    private static final int NUMBER_OF_CARDS = 52; // constant # of Cards
+   private static final int CARDS_IN_HAND = 5; // Constant 5 card hand
 
    private Card[] deck = new Card[NUMBER_OF_CARDS]; // Card references
    private int currentCard = 0; // index of next Card to be dealt (0-51)
@@ -49,6 +50,18 @@ public class DeckOfCards {
       else {
          return null; // return null to indicate that all Cards were dealt
       } 
-   } 
-} 
-
+   }
+   
+   public void handCheck() {
+	   //function to check pair
+	   // function to check two pairs
+	   // function to check three of a kind
+	   //function to check four of a kind
+	   }
+	   
+   public void checkPair() {
+	   
+   }
+   
+    
+}
