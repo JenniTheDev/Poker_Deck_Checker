@@ -1,5 +1,6 @@
 // Card.java
 // Card class represents a playing card.
+// Copied from Intro to Programming with Java, Chapter 7
  
 
 public class Card {
