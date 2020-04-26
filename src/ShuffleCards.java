@@ -18,6 +18,29 @@ public class ShuffleCards {
 				myDeckOfCards.dealCard(), myDeckOfCards.dealCard(),
 				myDeckOfCards.dealCard(), myDeckOfCards.dealCard() );
 		} // end for
+		
+	// My code is below here
+		
+		
+		// Get Hand size, in case you want to play with more cards
+		int handSize = myDeckOfCards.getHandSize();
+		
+		// Proper thing would be to make an array for each player's hand
+		Card[] playerHand = new Card[handSize];
+		
+		for (int i = 0; i < handSize; i++) {
+			playerHand[i] = myDeckOfCards.dealCard();
+		}
+		
+		for (int i = 0; i < handSize; i++) {
+			System.out.print("Your hand is: ");
+			// print out hand
+			
+		}
+		// then hide above array
+		
+		myDeckOfCards.handCheck();
+		
 	} // end main
  } // end class DeckOfCardsTest
 

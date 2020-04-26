@@ -6,11 +6,15 @@ public class DeckOfCards {
    // random number generator
    private static final SecureRandom randomNumbers = new SecureRandom();
    private static final int NUMBER_OF_CARDS = 52; // constant # of Cards
+  
+   //I added this 
    private static final int CARDS_IN_HAND = 5; // Constant 5 card hand
 
    private Card[] deck = new Card[NUMBER_OF_CARDS]; // Card references
    private int currentCard = 0; // index of next Card to be dealt (0-51)
 
+   
+   
    // constructor fills deck of Cards
    public DeckOfCards() {
       String[] faces = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
@@ -52,16 +56,38 @@ public class DeckOfCards {
       } 
    }
    
+   // My added Code is below here
+   
+   public int getHandSize() {
+	   int handSize = CARDS_IN_HAND;
+	   return handSize;
+   }
+   
+   
+   
    public void handCheck() {
-	   //function to check pair
+	   if (checkPair() == true) {
+		   System.out.print("There is one pair");
+	   } 
+	   if (checkPair()==false) {
+		   System.out.print("No Pairs");
+	   }
 	   // function to check two pairs
 	   // function to check three of a kind
 	   //function to check four of a kind
 	   }
 	   
-   public void checkPair() {
+   public Boolean checkPair() {
 	   
-   }
+	   for (int i = 0; i < CARDS_IN_HAND; i++) {
+		   for (int j = 0; j < CARDS_IN_HAND -1; j++) {
+			   if (deck[i]==deck[j]) {
+				   return true;
+			   }
+		   }
+	   } 
+	   return false;
+	}
    
     
 }
