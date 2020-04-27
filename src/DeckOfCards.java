@@ -65,29 +65,67 @@ public class DeckOfCards {
    
    
    
+   
+   
    public void handCheck() {
+	   
 	   if (checkPair() == true) {
-		   System.out.print("There is one pair");
+		   System.out.println("There is a pair");
 	   } 
-	   if (checkPair()==false) {
-		   System.out.print("No Pairs");
+	   else if (checkPair() == false) {
+		   System.out.println("No Pairs");
 	   }
-	   // function to check two pairs
+	   if (checkTwoPair()== true) {
+		   System.out.println("There are two pairs");
+	   }
+	   if (checkTwoPair() == false){
+		   System.out.println("There is not two pairs");
+	   }
 	   // function to check three of a kind
 	   //function to check four of a kind
 	   }
 	   
-   public Boolean checkPair() {
-	   
-	   for (int i = 0; i < CARDS_IN_HAND; i++) {
-		   for (int j = 0; j < CARDS_IN_HAND -1; j++) {
-			   if (deck[i]==deck[j]) {
+   public Boolean checkPair(){	
+	    for (int i = 0; i < CARDS_IN_HAND; i++) {
+		   for (int j = i+1; j < CARDS_IN_HAND; j++) {
+			   if (deck[i].getFace().equals(deck[j].getFace())) {
 				   return true;
-			   }
+			   } 
 		   }
-	   } 
+	   }
 	   return false;
 	}
+   
+   public Boolean checkTwoPair(){
+	   int numberOfPairs = 0;
+	   for (int i = 0; i < CARDS_IN_HAND; i++) {
+		   for (int j = i + 1; j < CARDS_IN_HAND; j++) {
+			   if (deck[i].getFace() == deck[j].getFace()) {
+				   numberOfPairs++;
+			   }
+		   }
+	   }
+	   if (numberOfPairs >= 2) {
+		   return true;
+	   }
+	   return false;
+	}
+   
+   public Boolean checkThreeOfKind() {
+	   int matchCount = 0;
+	   for (int i = 0; i < CARDS_IN_HAND; i++) {
+		   for (int j = i + 1; j < CARDS_IN_HAND; j++) {
+			   if (deck[i].getFace() == deck[j].getFace()) {
+				   matchCount++;
+			   }
+		   }
+		   
+	   } 
+	   if (matchCount >= 3) {
+		   return true;
+	   }
+	   return false;
+   }
    
     
 }

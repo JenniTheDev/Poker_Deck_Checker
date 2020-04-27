@@ -17,4 +17,10 @@ public class Card {
 	public String toString() { 
 		return face + " of " + suit; 
 	} // end method toString 
+	
+// My code below here
+	
+	public String getFace() {
+		return face;
+	}
  } // end class Card

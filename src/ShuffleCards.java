@@ -11,13 +11,13 @@ public class ShuffleCards {
 		myDeckOfCards.shuffle(); // place Cards in random order
 
 		 //print all 52 Cards in the order in which they are dealt
-		
-		for ( int i = 0; i < 13; i++ ){
+		 //for ( int i = 0; i < 13; i++ ){
  		 //deal and print 4 Cards
-				System.out.printf( "%-20s%-20s%-20s%-20s\n",
-				myDeckOfCards.dealCard(), myDeckOfCards.dealCard(),
-				myDeckOfCards.dealCard(), myDeckOfCards.dealCard() );
-		} // end for
+		 //	System.out.printf( "%-20s%-20s%-20s%-20s\n",
+		 //	myDeckOfCards.dealCard(), myDeckOfCards.dealCard(),
+		// myDeckOfCards.dealCard(), myDeckOfCards.dealCard() );
+		//} // end for
+		
 		
 	// My code is below here
 		
@@ -34,12 +34,13 @@ public class ShuffleCards {
 		
 		for (int i = 0; i < handSize; i++) {
 			System.out.print("Your hand is: ");
-			// print out hand
-			
+			System.out.print(playerHand[i]);
+			System.out.print("\n");	
 		}
-		// then hide above array
+		
 		
 		myDeckOfCards.handCheck();
+		
 		
 	} // end main
  } // end class DeckOfCardsTest
