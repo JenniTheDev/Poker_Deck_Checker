@@ -78,11 +78,21 @@ public class DeckOfCards {
 	   if (checkTwoPair()== true) {
 		   System.out.println("There are two pairs");
 	   }
-	   if (checkTwoPair() == false){
+	   else if (checkTwoPair() == false){
 		   System.out.println("There is not two pairs");
 	   }
-	   // function to check three of a kind
-	   //function to check four of a kind
+	   if (checkThreeOfKind()== true) {
+		   System.out.println("There is a three of a kind");
+	   }
+	   else if (checkThreeOfKind() == false){
+		   System.out.println("There is no three of a kind");
+	   }
+	   if (checkFourOfKind()== true) {
+		   System.out.println("There is a four of a kind");
+	   }
+	   else if (checkFourOfKind() == false){
+		   System.out.println("There is no four of a kind");
+	   }
 	   }
 	   
    public Boolean checkPair(){	
@@ -126,6 +136,21 @@ public class DeckOfCards {
 	   }
 	   return false;
    }
-   
+  
+   public Boolean checkFourOfKind() {
+	   int quadCount = 0;
+	   for (int i = 0; i < CARDS_IN_HAND; i++) {
+		   for (int j = i + 1; j < CARDS_IN_HAND; j++) {
+			   if (deck[i].getFace() == deck[j].getFace()) {
+				  quadCount++;
+			   }
+		   }
+		   
+	   } 
+	   if (quadCount >= 4) {
+		   return true;
+	   }
+	   return false;
+   }
     
 }

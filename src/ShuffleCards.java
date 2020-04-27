@@ -41,6 +41,11 @@ public class ShuffleCards {
 		
 		myDeckOfCards.handCheck();
 		
+		System.out.println("Thank you for using the Card Shuffling and Dealing application");
+		java.util.Date date = new java.util.Date();
+		System.out.println("The current date and time is: ");
+		System.out.println(date);
+		
 		
 	} // end main
  } // end class DeckOfCardsTest
